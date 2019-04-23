@@ -1,0 +1,27 @@
+version: '3.4'
+
+networks:
+  profilesvcnet:
+
+volumes:
+  profilesdata:
+
+services:
+
+  profilesvc:
+    build:
+      dockerfile: profileService.Dockerfile
+      context: .
+    networks: 
+      - profilesvcnet
+    ports:
+      - 8080
+
+  profiledb:
+    image: mysql:5.5
+    networks:
+      - profilesvcnet
+    volumes:
+      - profilesdata:/var/lib/mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=something
