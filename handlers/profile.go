@@ -7,7 +7,6 @@ import (
 	"github.com/gin-gonic/gin"
 
 	dbModel "github.com/rajch/2019-04-friendbook-profile/database/models"
-	"github.com/rajch/2019-04-friendbook-profile/models"
 )
 
 func GetProfile(c *gin.Context) {
@@ -18,28 +17,24 @@ func GetProfile(c *gin.Context) {
 		c.Status(http.StatusNotFound)
 		return
 	}
-
-	//	respProfile := models.Profile{
-	//		City:         *profile.City,
-	//		DateOfBirth:  *profile.DateOfBirth,
-	//		FirstName:    *profile.FirstName,
-	//		LastName:     *profile.LastName,
-	//		Gender:       *profile.Gender,
-	//		MobileNumber: *profile.MobileNumber,
-	//		UserName:     *profile.UserName,
-	//	}
-
 	c.JSON(http.StatusOK, profile)
 	return
 }
 
 func CreateOrUpdateProfile(c *gin.Context) {
 	userEmail := c.Query("userEmail")
-	requestBody := models.Profile{}
-	c.Bind(&requestBody)
+	requestBody := dbModel.Profile{}
+	c.BindJSON(&requestBody)
+	log.Printf("%s", *requestBody.UserName)
 	profile := dbModel.Profile{
-		Email: userEmail,
-		City:  &requestBody.City,
+		Email:        userEmail,
+		City:         requestBody.City,
+		DateOfBirth:  requestBody.DateOfBirth,
+		Gender:       requestBody.Gender,
+		LastName:     requestBody.LastName,
+		MobileNumber: requestBody.MobileNumber,
+		UserName:     requestBody.UserName,
+		FirstName:    requestBody.FirstName,
 	}
 
 	err := dbModel.CreateOrUpdateProfile(&profile)
@@ -48,5 +43,5 @@ func CreateOrUpdateProfile(c *gin.Context) {
 		return
 	}
 
-	c.JSON(http.StatusOK, &requestBody)
+	c.JSON(http.StatusOK, &profile)
 }
