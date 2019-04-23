@@ -1,0 +1,191 @@
+{
+    "openapi": "3.0.0",
+    "servers": [],
+    "info": {
+        "description": "Maintains the profile information of users",
+        "version": "0.1.0",
+        "title": "Friendbook Profile Service",
+        "termsOfService": "http://swagger.io/terms/",
+        "contact": {
+            "email": ""
+        },
+        "license": {
+            "name": "Apache 2.0",
+            "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+        }
+    },
+    "tags": [],
+    "paths": {
+        "/profile": {
+            "put": {
+                "summary": "Creates or updates a profile given a user email",
+                "description": "",
+                "parameters": [
+                    {
+                        "name": "userEmail",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "description": "Email id of existing user"
+                    }
+                ],
+                "operationId": "createorUpdate",
+                "responses": {
+                    "200": {
+                        "description": "Description",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "email id not find",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    }
+                },
+                "requestBody": {
+                    "content": {
+                        "*/*": {
+                            "required": true,
+                            "schema": {
+                                "username": "",
+                                "firstname": "",
+                                "lasttime": "",
+                                "dateOfBirth": "",
+                                "gender": "",
+                                "mobilenumber": "",
+                                "location": ""
+                            }
+                        }
+                    },
+                    "description": "User profile."
+                }
+            },
+            "get": {
+                "summary": "gets  user profile for given userEmailId",
+                "description": "",
+                "parameters": [
+                    {
+                        "name": "userEmail",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "description": "Email id of existing user"
+                    }
+                ],
+                "operationId": "getProfile",
+                "responses": {
+                    "200": {
+                        "description": "Description",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "email id not find",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "summary": "Deletes a profile for given userEmailId",
+                "description": "",
+                "parameters": [
+                    {
+                        "name": "userEmail",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "description": "Email id of existing user"
+                    }
+                ],
+                "operationId": "deleteProfile",
+                "responses": {
+                     "204": {
+                        "description": "Description",
+                        "content": {
+                            "not required": {
+                                "schema": {}
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "email id not find",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "userProfile": {
+                "type": "object",
+                "username": "",
+                "firsname": "",
+                "lastname": "",
+                "gender": "",
+                "dateOfBirth": "",
+                "mobileNumber": "",
+                "city": ""
+            }
+        },
+        "requestBodies": {
+            "Pet": {
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "$ref": "#/components/schemas/Pet"
+                        }
+                    },
+                    "application/xml": {
+                        "schema": {
+                            "$ref": "#/components/schemas/Pet"
+                        }
+                    }
+                },
+                "description": "Pet object that needs to be added to the store",
+                "required": true
+            },
+            "UserArray": {
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/components/schemas/User"
+                            }
+                        }
+                    }
+                },
+                "description": "List of user object",
+                "required": true
+            }
+        },
+        "securitySchemes": {},
+        "links": {},
+        "callbacks": {}
+    },
+    "security": []
+}
