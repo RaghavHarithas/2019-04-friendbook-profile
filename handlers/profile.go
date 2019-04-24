@@ -14,7 +14,7 @@ func GetProfile(c *gin.Context) {
 	profile, err := dbModel.GetProfileByEmail(userEmail)
 	if err != nil {
 		log.Println("Error while getting profile: %s", err)
-		c.Status(http.StatusNotFound)
+		c.Status(http.StatusOK)
 		return
 	}
 	c.JSON(http.StatusOK, profile)
