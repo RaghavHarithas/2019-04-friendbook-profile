@@ -20,7 +20,7 @@ type Profile struct {
 	LastName     *string `db:"lastname,omitempty" json:"lastname,omitempty"`
 	Gender       *string `db:"gender,omitempty" json:"gender,omitempty"`
 	DateOfBirth  *string `db:"date_of_birth,omitempty" json:"date_of_birth,omitempty"`
-	MobileNumber *string `db:"mobile_number,omitempty" json:"mobile_number,omitempty"`
+	MobileNumber *string `db:"mobile_number,omitempty" json:"mobileNumber,omitempty"`
 	City         *string `db:"city,omitempty" json:"city,omitempty"`
 	Visibility   *string `db:"visibility,omitempty" json:"-"`
 	Status       *string `db:"status,omitempty" json:"-"`
