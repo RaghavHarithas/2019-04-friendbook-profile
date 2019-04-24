@@ -147,8 +147,8 @@
                 "lastname": "",
                 "gender": "",
                 "dateOfBirth": "",
-                "mobileNumber": "",
-                "city": ""
+                "mobilenumber": "",
+                "location": ""
             }
         },
         "requestBodies": {

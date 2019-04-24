@@ -14,14 +14,14 @@ const (
 )
 
 type Profile struct {
-	Email        string  `db:"email" json:"email"`
+	Email        string  `db:"email" json:"userEmail"`
 	UserName     *string `db:"username,omitempty" json:"username,omitempty"`
 	FirstName    *string `db:"firstname,omitempty" json:"firstname,omitempty"`
 	LastName     *string `db:"lastname,omitempty" json:"lastname,omitempty"`
 	Gender       *string `db:"gender,omitempty" json:"gender,omitempty"`
 	DateOfBirth  *string `db:"date_of_birth,omitempty" json:"dateOfBirth,omitempty"`
-	MobileNumber *string `db:"mobile_number,omitempty" json:"mobileNumber,omitempty"`
-	City         *string `db:"city,omitempty" json:"city,omitempty"`
+	MobileNumber *string `db:"mobile_number,omitempty" json:"mobilenumber,omitempty"`
+	City         *string `db:"city,omitempty" json:"location,omitempty"`
 	Visibility   *string `db:"visibility,omitempty" json:"-"`
 	Status       *string `db:"status,omitempty" json:"-"`
 }
