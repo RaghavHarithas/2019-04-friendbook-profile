@@ -14,7 +14,8 @@ func main() {
 	defer connection.DisconnectPool()
 
 	r := gin.Default()
-	r.GET("/profiles", handlers.GetProfile)
-	r.PUT("/profiles", handlers.CreateOrUpdateProfile)
+	r.GET("/profile", handlers.GetProfile)
+	r.PUT("/profile", handlers.CreateOrUpdateProfile)
+	r.DELETE("/profile", handlers.DeleteProfile)
 	r.Run() // listen and serve on 0.0.0.0:8080
 }

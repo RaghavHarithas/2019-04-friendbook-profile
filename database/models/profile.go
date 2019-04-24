@@ -10,6 +10,7 @@ const (
 	GET_PROFILE_BY_EMAIL = `SELECT * FROM profile WHERE email=?`
 	INSERT_PROFILE       = `INSERT INTO profile (email, username, firstname, lastname, gender, date_of_birth, mobile_number, city) VALUES (:email, :username, :firstname, :lastname,:gender,:date_of_birth,:mobile_number,:city)`
 	UPDATE_PROFILE       = `UPDATE profile SET username=:username, firstname=:firstname, lastname=:lastname, gender=:gender, date_of_birth=:date_of_birth, mobile_number=:mobile_number, city=:city`
+	DELETE_PROFILE       = `DELETE FROM profile WHERE email=:email`
 )
 
 type Profile struct {
@@ -49,4 +50,19 @@ func CreateOrUpdateProfile(profile *Profile) error {
 	}
 
 	return err
+}
+
+func DeleteProfile(email string) error {
+	profile, err := GetProfileByEmail(email)
+	if err != nil {
+		log.Printf("Error getting profile in delete profile: %s", err)
+		return err
+	}
+
+	_, err = db.Pool.NamedExec(DELETE_PROFILE, profile)
+	if err != nil {
+		log.Printf("Error while deleting: %s", err)
+		return err
+	}
+	return nil
 }

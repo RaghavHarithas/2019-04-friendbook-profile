@@ -21,10 +21,6 @@ type DB struct {
 	*sqlx.DB
 }
 
-type Tx struct {
-	*sqlx.Tx
-}
-
 //Handle it with care, you may end up with multiple open connection to DB
 var Pool *DB
 
@@ -49,12 +45,6 @@ func ConnectPool() {
 
 func DisconnectPool() {
 	Pool.Close()
-}
-
-//Don't forget to commit or rollback the transaction.
-func Begin() *Tx {
-	tx := Pool.MustBegin()
-	return &Tx{tx}
 }
 
 func GetConnectionString() string {

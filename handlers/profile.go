@@ -25,7 +25,6 @@ func CreateOrUpdateProfile(c *gin.Context) {
 	userEmail := c.Query("userEmail")
 	requestBody := dbModel.Profile{}
 	c.BindJSON(&requestBody)
-	log.Printf("%s", *requestBody.UserName)
 	profile := dbModel.Profile{
 		Email:        userEmail,
 		City:         requestBody.City,
@@ -44,4 +43,16 @@ func CreateOrUpdateProfile(c *gin.Context) {
 	}
 
 	c.JSON(http.StatusOK, &profile)
+}
+
+func DeleteProfile(c *gin.Context) {
+	userEmail := c.Query("userEmail")
+	err := dbModel.DeleteProfile(userEmail)
+	if err != nil {
+		c.Status(http.StatusNotFound)
+		return
+	}
+
+	c.Status(http.StatusNoContent)
+	return
 }
