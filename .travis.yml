@@ -7,5 +7,6 @@ script:
   - docker image ls
   - docker-compose up -d
   - docker-compose ps
+  - sleep 60
   - docker-compose logs profilesvc
   - ./test.sh
