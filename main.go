@@ -3,9 +3,9 @@ package main
 import (
 	"github.com/gin-gonic/gin"
 
-	"github.com/rajch/2019-04-friendbook-profile/database/connection"
-	"github.com/rajch/2019-04-friendbook-profile/database/schema"
-	"github.com/rajch/2019-04-friendbook-profile/handlers"
+	"github.com/RaghavHarithas/2019-04-friendbook-profile/database/connection"
+	"github.com/RaghavHarithas/2019-04-friendbook-profile/database/schema"
+	"github.com/RaghavHarithas/2019-04-friendbook-profile/handlers"
 )
 
 func main() {

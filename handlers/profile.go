@@ -6,7 +6,7 @@ import (
 
 	"github.com/gin-gonic/gin"
 
-	dbModel "github.com/rajch/2019-04-friendbook-profile/database/models"
+	dbModel "github.com/RaghavHarithas/2019-04-friendbook-profile/database/models"
 )
 
 func GetProfile(c *gin.Context) {

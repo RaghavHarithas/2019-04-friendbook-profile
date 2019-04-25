@@ -1,5 +1,5 @@
-hash: 2d5794cc2b818d080f9b1a9dbdc54577126a894af9bf83e9cef91152660fcb00
-updated: 2019-04-23T07:31:41.921228434Z
+hash: b925159c922c7e6fe5f16c2dcf3fe20937f0ee4de7307ea7d9ebfb884e8c1243
+updated: 2019-04-25T09:51:53.105143032Z
 imports:
 - name: github.com/gin-contrib/sse
   version: 22d885f9ecc78bf4ee5d72b937e4bbcdc58e8cae
@@ -24,9 +24,7 @@ imports:
 - name: github.com/mattes/migrate
   version: 035c07716cd373d88456ec4d701402df52584cb4
   subpackages:
-  - database
   - database/mysql
-  - source
   - source/file
 - name: github.com/mattn/go-isatty
   version: 3fb116b820352b7f0c281308a4d6250c22d94e27

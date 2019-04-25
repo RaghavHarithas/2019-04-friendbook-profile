@@ -1,7 +1,7 @@
 package schema
 
 import (
-	"github.com/rajch/2019-04-friendbook-profile/database/connection"
+	"github.com/RaghavHarithas/2019-04-friendbook-profile/database/connection"
 )
 
 var schema = `CREATE TABLE IF NOT EXISTS profile (

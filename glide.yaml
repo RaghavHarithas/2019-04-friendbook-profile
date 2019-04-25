@@ -1,4 +1,4 @@
-package: github.com/rajch/2019-04-friendbook-profile
+package: github.com/RaghavHarithas/2019-04-friendbook-profile
 import:
 - package: github.com/gin-gonic/gin
   version: ^1.3.0

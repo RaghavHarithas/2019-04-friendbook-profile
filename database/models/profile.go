@@ -3,7 +3,7 @@ package profile
 import (
 	"log"
 
-	db "github.com/rajch/2019-04-friendbook-profile/database/connection"
+	db "github.com/RaghavHarithas/2019-04-friendbook-profile/database/connection"
 )
 
 const (

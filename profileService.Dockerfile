@@ -1,6 +1,6 @@
 FROM golang:1.11 as builder
 
-WORKDIR $GOPATH/src/github.com/rajch/2019-04-friendbook-profile
+WORKDIR $GOPATH/src/github.com/RaghavHarithas/2019-04-friendbook-profile
 
 # Copy everything from the current directory to the PWD(Present Working Directory) inside the container
 COPY . .
