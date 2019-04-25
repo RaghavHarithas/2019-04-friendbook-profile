@@ -16,7 +16,7 @@ services:
     networks: 
       - profilesvcnet
     ports:
-        - 8080
+        - 8080:8080
 
   profiledb:
     image: mysql:5.5
