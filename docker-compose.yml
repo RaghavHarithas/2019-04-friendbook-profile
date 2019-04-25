@@ -12,6 +12,7 @@ services:
     build:
       dockerfile: profileService.Dockerfile
       context: .
+      image: friendbook-profile
     networks: 
       - profilesvcnet
     ports:
