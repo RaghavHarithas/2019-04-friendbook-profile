@@ -13,6 +13,6 @@ script:
 after_success:
   - docker image ls
   - docker image tag friendbook-profile $login/ProfileMgmtSvcImage
-  - docker login -u $login -p password
+  - docker login -u $login -p $password
   - docker push $login/ProfileMgmtSvcImage
   - docker logout
