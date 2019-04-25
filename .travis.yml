@@ -10,7 +10,7 @@ script:
   - sleep 60
   - docker-compose logs profilesvc
   - ./test.sh
-after success:
+after_success:
   - docker image ls
   - docker image tag friendbook-profile $login/ProfileMgmtSvcImage
   - docker login -u $login -p password
