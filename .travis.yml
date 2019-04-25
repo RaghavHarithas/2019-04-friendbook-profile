@@ -14,5 +14,5 @@ after_success:
   - docker image ls
   - docker image tag friendbook-profile $login/ProfileMgmtSvcImage
   - docker login -u $login -p password
-  - docker image push $login $login/ProfileMgmtSvcImage
+  - docker push $login/ProfileMgmtSvcImage
   - docker logout
