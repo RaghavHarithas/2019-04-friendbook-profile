@@ -12,7 +12,7 @@ script:
   - ./test.sh
 after_success:
   - docker image ls
-  - docker image tag friendbook-profile $login/ProfileMgmtSvcImage
+  - docker image tag friendbook-profile $login/profilemgmtsvcimage
   - docker login -u $login -p $password
-  - docker push $login/ProfileMgmtSvcImage
+  - docker push $login/profilemgmtsvcimage
   - docker logout
